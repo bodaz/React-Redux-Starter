@@ -1,8 +1,7 @@
+// video_list_item.js
 import React from 'react';
 
 const VideoListItem = ({video, onVideoSelect}) => {
-  // const video = props.video; //es6, just declare it as param
-  // console.log(video);
 
   const imageUrl = video.snippet.thumbnails.default.url;
 
@@ -18,6 +17,7 @@ const VideoListItem = ({video, onVideoSelect}) => {
       </div>
     </li>
   );
+
 };
 
 export default VideoListItem;

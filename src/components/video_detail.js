@@ -1,8 +1,8 @@
+// video_detail.js
 import React from 'react';
 
 const VideoDetail = ({video}) => {
-  // make sure the video has been provided in the props
-  // before it attempts to render
+
   if (!video) {
     return <div>Loading...</div>;
   }
@@ -22,6 +22,7 @@ const VideoDetail = ({video}) => {
       </div>
     </div>
   );
+
 };
 
 export default VideoDetail;
