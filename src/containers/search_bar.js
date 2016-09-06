@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
     this.state = { term:'' };
 
-    // bind /this/ to context
+    // bind /this/ to context when there's a callback
     this.onInputChange  = this.onInputChange.bind(this);
     this.onFormSubmit   = this.onFormSubmit.bind(this);
   }
@@ -22,8 +22,9 @@ class SearchBar extends Component {
   onFormSubmit(event) {
     event.preventDefault();
 
-    // go and fetch weather data
+    // call the fetchWeather action creator whenever user submit
     this.props.fetchWeather(this.state.term);
+    // clear search input
     this.setState({ term: '' });
   }
 
@@ -46,9 +47,11 @@ class SearchBar extends Component {
   }
 }
 
+// bind it to dispatch and mapping the action creator to props
+// therefore, /this.props.fetchWeather/
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchWeather }, dispatch);
 }
 
-// passing null instead of state
+// passing null instead of state, always second argument
 export default connect(null, mapDispatchToProps)(SearchBar);
