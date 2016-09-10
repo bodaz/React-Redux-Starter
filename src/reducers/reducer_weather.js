@@ -1,6 +1,6 @@
-import { FETCH_WEATHER } from '../actions/index';
+import { FETCH_WEATHER } from '../actions/index'
 
-export default function(state = [], action) {
+export default function (state = [], action) {
   // console.log('Action received', action);
 
   switch (action.type) {
@@ -9,8 +9,8 @@ export default function(state = [], action) {
       // return state.push(action.payload.data);
       // we return a new array
       // return state.concat([action.payload.data]);
-      return [ action.payload.data, ...state ]; //es6 syntax
+      return [ action.payload.data, ...state ] // es6 syntax
   }
 
-  return state;
+  return state
 }
